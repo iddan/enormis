@@ -1,4 +1,4 @@
-# Enermis
+# Enormis
 ## Simple modern MongoDB driver
 ### Code Example
 ```js
