@@ -1,0 +1,27 @@
+{
+    "name": "enormis",
+    "version": "v0.1.0",
+    "description": "Simple modern MongoDB driver",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:aniddan/enormis.git"
+    },
+    "keywords": [
+        "mongodb",
+        "shell",
+        "es6"
+    ],
+    "scripts": {},
+    "author": "Iddan Aharonson <mail@iddan.co> (http://iddan.co)",
+    "main": "enormis.js",
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/aniddan/enormis/issues"
+    },
+    "homepage": "https://github.com/aniddan/enormis",
+    "dependencies": {
+        "mongodb": "^2.1.16",
+        "deasync": "^0.1.4"
+    }
+}
