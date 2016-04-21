@@ -1,23 +1,26 @@
 import {MongoClient} from 'mongodb';
 import deasync from 'deasync';
 
+function exec () {
+    let apply = this.collection.native[this.method].apply(this.collection.native, [].slice.call(arguments));
+    if (apply.toArray)
+        return apply.toArray();
+    else 
+        return apply;
+}
+
 class Collection {
     constructor (name, db) {
         this.name = name;
         this.native = db.native.collection(name);
         this.db = db;
-    }
-    find (query) {
-        return this.native.find(query).toArray();
-    }
-    findOne (query) {
-        return this.native.findOne(query);
-    }
-    insertMany (array) {
-        return this.native.insertMany(array);
-    }
-    insertOne (doc) {
-        return this.native.insertOne(doc);
+        let methods = [];
+        for (let key in this.native)
+            if (typeof this.native[key] == 'function')
+                methods.push(key);
+        methods.forEach(method => {
+            this[method] = exec.bind({collection: this, method: method});
+        });
     }
 }
 
