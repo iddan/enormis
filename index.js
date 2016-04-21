@@ -2,7 +2,7 @@ import {MongoClient} from 'mongodb';
 import deasync from 'deasync';
 
 function exec () {
-    let apply = this.collection.native[this.method].apply(this.collection.native, [].slice.call(arguments));
+    let apply = this.collection.native[this.method].apply(this.collection.native, arguments);
     if (apply.toArray)
         return apply.toArray();
     else 
