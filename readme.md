@@ -1,5 +1,22 @@
 # Enormis
 ## Simple modern MongoDB driver
+### Motivation
+#### Callback Hell
+```js
+MongoClient.connect(URL).then(db => {
+    // ...
+});
+```
+#### Poor Syntax
+```js
+db.collection(NAME).find(QUERY).toArray().then(res => {
+    // ...
+});
+```
+Mongo Shell Inspiration:
+```
+ $ db.user.find()
+```
 ### Code Example
 ```js
 import Enormis from './index';
