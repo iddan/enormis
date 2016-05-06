@@ -39,4 +39,4 @@ class Enormis {
     }
 }
 
-exports = Enormis;
+module.exports = Enormis;
