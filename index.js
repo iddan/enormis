@@ -39,4 +39,4 @@ class Enormis {
     }
 }
 
-exports.default = Enormis;
+exports = Enormis;
