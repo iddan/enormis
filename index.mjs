@@ -1,5 +1,5 @@
-const {MongoClient} = require('mongodb');
-const deasync = require('deasync');
+import {MongoClient} from 'mongodb';
+import deasync from 'deasync';
 
 function exec () {
     let apply = this.collection.native[this.method].apply(this.collection.native, arguments);
@@ -39,4 +39,4 @@ class Enormis {
     }
 }
 
-exports.default = Enormis;
+export default Enormis;

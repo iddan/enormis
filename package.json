@@ -1,6 +1,6 @@
 {
     "name": "enormis",
-    "version": "v0.2.0",
+    "version": "v0.2.1",
     "description": "Simple modern MongoDB driver",
     "main": "index.js",
     "repository": {
