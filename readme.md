@@ -19,7 +19,7 @@ Mongo Shell Inspiration:
 ```
 ### Code Example
 ```js
-import Enormis from './index';
+import Enormis from 'enormis';
 
 let db = new Enormis('mongodb://localhost:27017/test');
 
