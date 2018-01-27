@@ -1,27 +1,25 @@
 # Enormis
-## Simple modern MongoDB driver
-### Motivation
-#### Callback Hell
-```js
-MongoClient.connect(URL).then(db => {
-    // ...
-});
-```
-#### Poor Syntax
-```js
-db.collection(NAME).find(QUERY).toArray().then(res => {
-    // ...
-});
-```
-Mongo Shell Inspiration:
-```
- $ db.user.find()
-```
-### Code Example
-```js
-import Enormis from 'enormis';
 
-let db = new Enormis('mongodb://localhost:27017/test');
+Simple modern MongoDB driver
 
-db.user.find({}).then(console.log);
+Use MongoDB like this:
+
+```javascript
+const { Client } = require('enormis')
+
+async function getUsers() {
+    const client = await Client('mongodb://localhost:27017');
+    return Array.from(client.test.user.find({}))
+}
+```
+
+Instead of:
+
+```javascript 
+const { MongoClient } = require('mongodb')
+
+async function getUsers() {
+    const client = await MongoClient.connect('mongodb://localhost:27017')
+    return Array.from(client.db('test').collection('user').find({}))
+}
 ```

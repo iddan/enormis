@@ -1,27 +1,30 @@
 {
-    "name": "enormis",
-    "version": "v0.2.3",
-    "description": "Simple modern MongoDB driver",
-    "main": "index.js",
-    "repository": {
-        "type": "git",
-        "url": "git@github.com:aniddan/enormis.git"
-    },
-    "keywords": [
-        "mongodb",
-        "shell",
-        "es6"
-    ],
-    "scripts": {},
-    "author": "Iddan Aharonson <mail@iddan.co> (http://iddan.co)",
-    "main": "enormis.js",
-    "license": "Apache-2.0",
-    "bugs": {
-        "url": "https://github.com/aniddan/enormis/issues"
-    },
-    "homepage": "https://github.com/aniddan/enormis",
-    "dependencies": {
-        "mongodb": "^2.1.16",
-        "deasync": "^0.1.4"
-    }
+  "name": "enormis",
+  "version": "v0.2.3",
+  "description": "Simple modern MongoDB driver",
+  "main": "enormis.js",
+  "repository": {
+      "type": "git",
+      "url": "git@github.com:iddan/enormis.git"
+  },
+  "keywords": [
+      "mongodb",
+      "shell",
+      "es6"
+  ],
+  "scripts": {},
+  "author": {
+    "name": "Iddan Aaronsohn",
+    "email": "mail@aniddan.com",
+    "url": "https://aniddan.com"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+      "url": "https://github.com/iddan/enormis/issues"
+  },
+  "homepage": "https://github.com/iddan/enormis",
+  "dependencies": {
+    "@types/mongodb": "^3.0.5",
+    "mongodb": "^3.0.1"
+  }
 }
