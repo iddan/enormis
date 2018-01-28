@@ -1,4 +1,5 @@
 const { MongoClient, Cursor } = require("mongodb");
+const AggregationCursor = require('mongodb/lib/aggregation_cursor')
 
 function applyToArray(onFullfil, onReject) {
   const arrayPromise = this.toArray()
@@ -11,7 +12,7 @@ function applyToArray(onFullfil, onReject) {
 const collectionMethodProxyDescriptor = {
   apply(method, thisArg, argumentsList) {
     const value = method.apply(thisArg, argumentsList);
-    if (value instanceof Cursor) {
+    if (value instanceof Cursor || value instanceof AggregationCursor) {
       value.then = applyToArray
     }
     return value
@@ -39,7 +40,9 @@ const databaseProxyDescriptor = {
     if (name in target) {
       return target[name];
     }
-    return Collection(target.collection(name));
+    if (typeof name === 'string') {
+      return Collection(target.collection(name));
+    }
   }
 }
 
@@ -58,7 +61,9 @@ const clientProxyDescriptor = {
     if (name in target) {
       return target[name];
     }
-    return Database(target.db(name));
+    if (typeof name === 'string') {
+      return Database(target.db(name));
+    }
   }
 }
 
